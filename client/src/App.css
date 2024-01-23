@@ -1,0 +1,57 @@
+.fontLink {
+  font-family: "Roboto", sans-serif;
+}
+
+.sideNav {
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transition: 0.5s ease;
+  overflow-x: hidden;
+  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-right: 2px solid;
+  border-color: lightgrey;
+}
+
+.nav-item{
+  padding-bottom: 10%;
+  font-size:large;
+}
+.navbarItem:hover{
+  background-color: #4895EF;
+  color: white;
+}
+
+.header {
+  background-color: white;
+  padding-top: 5%;
+  text-align: left;
+  align-items: left;
+  font-family: "Roboto", sans-serif;
+  border-bottom: 2px solid;
+  border-color: lightgrey;
+}
+
+.headerText {
+  padding-left: 12%;
+  color: black;
+}
+
+.headerName {
+  padding-right: 12%;
+  justify-content: end;
+  color: black;
+}
+
+.studentForm {
+  margin: auto;
+  background-color: bisque;
+  height: 100%;
+  width: 100%;
+}
