@@ -1,0 +1,9 @@
+{
+    "students":[
+        {
+            "fname": "Calvin",
+            "lname": "Zheng",
+            "dob": "date of birth"
+        }
+    ]
+}
