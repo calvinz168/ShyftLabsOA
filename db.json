@@ -1,9 +1,36 @@
 {
-    "students":[
-        {
-            "fname": "Calvin",
-            "lname": "Zheng",
-            "dob": "date of birth"
-        }
-    ]
+  "students": [
+    {
+      "id": "c4b5",
+      "text": "Calvin",
+      "text2": "Zheng",
+      "date": "2014-12-18"
+    },
+    {
+      "id": "3b92",
+      "text": "John",
+      "text2": "Smith",
+      "date": "2000-01-31"
+    }
+  ],
+  "courses": [
+    {
+      "id": "caa0",
+      "text": "Computer Science"
+    }
+  ],
+  "grades": [
+    {
+      "id": "3c4e",
+      "selectionCourse": "Computer Science",
+      "selectionStudent": "Calvin Zheng",
+      "selectionGrade": "A"
+    },
+    {
+      "id": "d813",
+      "selectionCourse": "Computer Science",
+      "selectionStudent": "John Smith",
+      "selectionGrade": "B"
+    }
+  ]
 }

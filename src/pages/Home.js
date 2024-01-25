@@ -1,19 +1,22 @@
-import React from 'react'
-import Header from '../components/Header'
-import SideNav from '../components/SideNav'
+import React from "react";
+import Header from "../components/Header";
+import SideNav from "../components/SideNav";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
-    <div style={style}>
-        <Header/>
-        <SideNav/>
+    <div className="mainContainer">
+      <Header />
+      <div className="d-flex flex-row">
+        <SideNav />
+        <div className="mainContent">
+          <h2>Welcome to the Student Result Management System!</h2>
+          <h2>Please select an option from the side navigation bar</h2>
+        </div>
+      </div>
+      <Footer />
     </div>
-  )
-}
-
-const style = {
-    backgroundColor: "daedf4",
-    // outerHeight: 100
+  );
 };
 
-export default Home
+export default Home;

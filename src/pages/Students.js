@@ -2,51 +2,55 @@ import React from "react";
 import Header from "../components/Header";
 import SideNav from "../components/SideNav";
 import StudentForm from "../components/StudentForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StudentsDisplay from "../components/StudentsDisplay";
+import Footer from "../components/Footer";
 
 const Students = () => {
-  const [students, setStudents] = useState([
-    // {
-    //   id: 0,
-    //   fname: "Calvin",
-    //   lname: "Zheng",
-    //   date: "2024-01-24"
-    // },
-    // {
-    //   id: 1,
-    //   fname: "Calvin2",
-    //   lname: "Zheng2",
-    //   date: "2024-02-24"
-    // },
-    // {
-    //   id: 2,
-    //   fname: "Calvin3",
-    //   lname: "Zheng3",
-    //   date: "2024-03-24"
-    // },
-  ]);
+  const [students, setStudents] = useState([]);
 
-  const addStudent = (student) => {
-    const id = Math.floor(Math.random() * 10000) + 1
-    const newStudent = { id, ...student };
-    setStudents([...students, newStudent]);
+  useEffect(() => {
+    const getStudents = async () => {
+      const studentsFromServer = await fetchStudents();
+      setStudents(studentsFromServer);
+    };
+
+    getStudents();
+  }, []);
+
+  const fetchStudents = async () => {
+    const res = await fetch("http://localhost:5000/students");
+    const data = await res.json();
+
+    return data;
+  };
+
+  const addStudent = async (course) => {
+    const res = await fetch("http://localhost:5000/students", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(course),
+    });
+
+    const data = await res.json();
+    setStudents([...students, data]);
   };
 
   return (
-    <div style={style}>
+    <div className="mainContainer">
       <Header />
-      <div style={{backgroundColor:"blue",display:"inline-flex"}}>
-      <SideNav />
-      <StudentForm onAdd={addStudent}/>
-      <StudentsDisplay studentsValues={students}/>
+      <div className="d-flex flex-row">
+        <SideNav />
+        <div className="mainContent d-flex flex-row">
+          <StudentForm onAdd={addStudent} />
+          <StudentsDisplay studentsValues={students} />
+        </div>
       </div>
+      <Footer />
     </div>
-  )
-}
-
-const style = {
-  backgroundColor: "daedf4",
-  // outerHeight: 100
+  );
 };
+
 export default Students;

@@ -1,28 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SideNav = () => {
   return (
     <div className="sideNav">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="btn btn-outline-secondary navbarItem" href="#">
-            Home
-          </a>
+          <Link to="/" class="btn navbarItem">
+            <h4 className="navText">Home</h4>
+          </Link>
         </li>
         <li class="nav-item">
-          <a class="btn navbarItem" href="#">
-            Students
-          </a>
+          <Link to="/Students" class="btn navbarItem">
+            <h4 className="navText">Students</h4>
+          </Link>
         </li>
         <li class="nav-item">
-          <a class="btn navbarItem" href="#">
-            Courses
-          </a>
+          <Link to="/Courses" class="btn navbarItem">
+            <h4 className="navText">Courses</h4>
+          </Link>
         </li>
         <li class="nav-item">
-          <a class="btn navbarItem" href="#">
-            Results
-          </a>
+          <Link to="/Results" class="btn navbarItem">
+            <h4 className="navText">Results</h4>
+          </Link>
         </li>
       </ul>
     </div>
